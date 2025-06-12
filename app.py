@@ -21,15 +21,13 @@ if 'page' not in st.session_state:
     st.session_state.page = "About Me"
 
 # --- Navigation Buttons ---
-col1, col2, col3, col4 = st.columns(4)
-if col1.button("About Me"):
-    st.session_state.page = "About Me"
-if col2.button("Education"):
-    st.session_state.page = "Education"
-if col3.button("Projects"):
-    st.session_state.page = "Projects"
-if col4.button("Skills"):
-    st.session_state.page = "Skills"
+page = st.radio(
+    "Portfolio:",
+    ("About Me", "Education", "Projects", "Skills"),
+    index=0,
+    horizontal=True
+)
+st.session_state.page = page
 
 # --- Custom Styling ---
 st.markdown(
@@ -125,15 +123,15 @@ if st.session_state.page == "About Me":
         st.markdown("#### ☁️ Cloud")
         st.write("""
         - Google Colab  
-        - Basic AWS (EC2, S3)
+        - Jupyter Notebooks
         """)
 
     with col2:
         st.markdown("#### 🧠 Deep Learning")
         st.write("""
-        - Neural Networks (Basics)  
-        - TensorFlow (Basics)  
-        - Keras (Basics)
+        - Neural Networks   
+        - TensorFlow   
+        - Keras 
         """)
 
         st.markdown("#### 🛠️ Technologies & Libraries")
@@ -156,7 +154,7 @@ if st.session_state.page == "About Me":
     st.write("""
     - **Software Engineer at Lyros Technologies** (October 2024 - Present)  
     - Applied machine learning techniques to solve real-world problems, enhancing understanding of data science principles.  
-    - Skills Gained: Python, Machine Learning, Data Analysis, Software Development
+    - Skills Gained: Python, Machine Learning, Data Analysis.
     """)
 
 elif st.session_state.page == "Education":
@@ -231,3 +229,5 @@ elif st.session_state.page == "Skills":
     st.write("""
     - Familiar with ServiceNow platform.
     """)
+
+
