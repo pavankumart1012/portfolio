@@ -34,10 +34,50 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-image: url("https://images.unsplash.com/photo-1542831323-533a40c64e5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kaW5nfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
-        background-size: cover;
-        color: black;
-        font-family: 'Arial', sans-serif;
+        background-color: #000000;
+        color: #FFFFFF;
+        font-family: 'Arial', Helvetica, sans-serif;
+    }
+
+    /* Make text visible against black background */
+    h1, h2, h3, h4, h5, h6, p, div, span, a {
+        color: #FFFFFF !important;
+    }
+
+    /* Button styles */
+    div.stButton > button:first-child {
+        background-color: #333333; /* Default button color */
+        color: #FFFFFF;
+        border: 1px solid #555555;
+    }
+
+    div.stButton > button:hover {
+        background-color: #555555; /* Hover button color */
+        color: #FFFFFF;
+    }
+
+    div.stButton > button:active {
+        background-color: #777777; /* Active button color */
+        color: #FFFFFF;
+    }
+
+    div.stButton > button:disabled {
+        background-color: #111111; /* Disabled button color */
+        color: #888888;
+        border: 1px solid #333333;
+    }
+
+    /* Ensure elements are still accessible */
+    .element-container {
+        position: relative;
+    }
+
+    .element-container::before {
+        content: attr(data-alttext);
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: black; /* Make alttext visible */
     }
     </style>
     """,
@@ -46,6 +86,17 @@ st.markdown(
 
 
 # --- Side Panel / Header ---
+st.sidebar.markdown("""
+    <style>
+        [data-testid="stSidebar"] {
+            background-color: #222222;
+            color: #FFFFFF;
+        }
+        [data-testid="stSidebar"] a {
+            color: #FFFFFF;
+        }
+    </style>
+""", unsafe_allow_html=True)
 with st.sidebar:
     st.image(profile_pic, width=150)
     st.title("Pavan Kumar Tarivetla",  )
