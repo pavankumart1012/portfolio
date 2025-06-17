@@ -88,10 +88,10 @@ with st.sidebar:
     st.markdown("📍 Amalapuram, India")
     st.markdown("📞 8919233032")
     st.markdown("**Software Engineer**")
-    st.markdown("Python | ML | Data Science")
+    st.markdown("Python | ML | Data Analyst")
     st.markdown("---")
-    st.markdown("[GitHub](https://github.com/pavankumart1012)")
-    st.markdown("[LinkedIn](https://linkedin.com/in/pavan-kumar-tarivetla-445556330)")
+    st.sidebar.markdown("[![GitHub](https://img.shields.io/badge/GitHub-000?logo=github&style=for-the-badge&logoColor=white)](https://github.com/pavankumart1012)")
+    st.sidebar.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&style=for-the-badge&logoColor=white)](https://www.linkedin.com/in/pavan-kumar-tarivetla-445556330)")
     st.markdown("[Email](mailto:pavankumart955@gmail.com)")
     st.markdown("[📄 View Resume](https://your-resume-link.com)")
 
@@ -144,15 +144,16 @@ if st.session_state.page == "About Me":
     with col3:
         st.markdown("#### 🧰 Tools & Frameworks")
         st.write("""
-        - Streamlit, Jupyter Notebook  
+        - Streamlit 
         - Git & GitHub  
         - VS Code  
         - Anaconda
+        - Flask (for web apps)
         """)
 
     st.markdown("### 💼 Work Experience")
     st.write("""
-    - **Software Engineer at Lyros Technologies** (October 2024 - Present)  
+    - **Software Engineer at Lyros Technologies** (April 2025 - Present)  
     - Applied machine learning techniques to solve real-world problems, enhancing understanding of data science principles.  
     - Skills Gained: Python, Machine Learning, Data Analysis.
     """)
